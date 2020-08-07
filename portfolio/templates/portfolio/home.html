@@ -1,0 +1,72 @@
+{% extends "portfolio/base.html" %} 
+
+{% load static %}
+
+{% block content %}
+
+
+
+<style type="text/css">
+  body{background: linear-gradient( white 37%,white 37%,#000000 0%,cyan 37%,cyan 37%) !important /* W3C */}
+
+
+  /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <div class="d-flex justify-content-center">
+      <img src="{% static 'portfolio/dp.jpg' %}" height=476, width=730>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    
+  </div>
+</div>
+<div>
+  
+  <h2 class='mt-5'>About Me</h2>
+  <hr >
+  <p style='font-size:25px;'>My name is Sanjeev Kotha.<br>I am a sophomore computing science major at University of Alberta.<br> I currently reside in Edmonton but I call many places home.<br>
+    I am interested in learning about Software Dev, Data Science and Machine Learning.
+
+
+
+
+    
+  </p>
+
+  <h2 class='mt-5'>Skills</h2>
+  <hr >
+  <p style='font-size:25px;'>Intermediate: C++ • Python<br>Familiar: Javascript • React • Django • CSS • HTML • MySQL<br>
+  </p>
+  <div >
+    <h2 class="mt-5">Portfolio</h2>
+    <hr>
+    <div class="row">
+      {% for project in projects %}
+      <div  class="col-lg-4 col-md-6">
+
+        {% if project.url %}
+        <a href="{{ project.url }}">
+          <img src="{{ project.image.url }}" class="img-fluid mb-2", style="max-height:150px;max-width:400px;height:auto;width:auto">
+        </a>
+        {% else %}
+
+        <img src="{{ project.image.url }}" class="img-fluid mb-2">
+        {% endif %}
+        <h3>{{ project.title }}</h3>
+        <p style="font-size:25px;">{{ project.description }}</p>
+
+      </div>
+      {% endfor %}
+    </div> 
+  </div>
+</div>
+
+{% endblock %} 
+
+
+    
