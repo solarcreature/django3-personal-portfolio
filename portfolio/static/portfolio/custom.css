@@ -35,6 +35,18 @@ hr {
     color: rgb(0, 0, 0) !important;
     
     }
+
+.footer {
+    width: 100%;
+    font-size: 0.5rem;
+    text-align: center;
+    overflow: visible;
+    color: #004289;
+    font-weight: bold;
+    height: 2rem;
+    background-color: #CFFEEE;
+    }	
+
 @media (min-width: 992px) {
     #hometext {
         font-size: 4rem;
